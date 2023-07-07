@@ -1,0 +1,45 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+       
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    background: rgb(58,180,159);
+    background: radial-gradient(circle, rgba(58,180,159,1) 0%, rgba(216,252,69,1) 41%, rgba(23,200,107,1) 67%);
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body {
+    margin-bottom: 60px;
+}
+
+#video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.tableColor{
+    color: darkgrey;
+    
+}
+
+.colorChange
+{
+    color: white; 
+}

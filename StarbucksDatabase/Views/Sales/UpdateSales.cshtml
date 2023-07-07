@@ -1,0 +1,22 @@
+﻿@model Sales
+
+<h2>Update @Model.StoreName</h2>
+
+@using (Html.BeginForm("UpdateSalesToDatabase", "Sales", "Post"))
+{
+    <input asp-for="SalesID" type="hidden" value="@Model.SalesID" />
+
+    <label asp-for="StoreName" class="control-label">Name</label>
+    <input type="text" name="StoreName" class="form-control" value="@Model.StoreName" />
+
+    <label asp-for="EstimatedAnnualSales" class="control-label">EstimatedAnnualSales</label>
+    <input type="number" step="0.01" name="EstimatedAnnualSales" class="form-control" value="@Model.EstimatedAnnualSales" />
+
+
+    <label asp-for="SalesByMonth" class="control-label">SalesByMonth</label>
+    <input type="number" step="0.01" name="SalesByMonth" class="form-control" value="@Model.SalesByMonth" />
+
+
+    <input type="submit" value="Update Sales" class="btn btn-primary" />
+}
+

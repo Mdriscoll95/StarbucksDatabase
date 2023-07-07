@@ -1,0 +1,20 @@
+﻿@model Sales
+
+<h2>Create a New Sales</h2>
+
+@using (Html.BeginForm("InsertSalesToDatabase", "Sales", "Post"))
+{
+    <input asp-for="SalesID" type="hidden" value="" />
+
+    <label asp-for="StoreName" class="control-label">StoreName</label>
+    <input type="text" name="StoreName" class="form-control" value="" />
+
+    <label asp-for="EstimatedAnnualSales" class="control-label">EstimatedAnnualSales</label>
+    <input type="number" step="0.01" name="EstimatedAnnualSales" class="form-control" />
+
+    <label asp-for="SalesByMonth" class="control-label">SalesByMonth</label>
+    <input type="number" step="0.01" name="SalesByMonth" class="form-control" />
+
+    <input type="submit" value="Create Sales" class="btn btn-primary" />
+}
+

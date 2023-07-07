@@ -1,0 +1,21 @@
+﻿@model Stores
+
+<h2>Create a New Store</h2>
+
+@using (Html.BeginForm("InsertStoresToDatabase", "Stores", "Post"))
+{
+    <input asp-for="StoreID" type="hidden" value="" />
+
+    <label asp-for="Location" class="control-label">Location</label>
+    <input type="text" name="Location" class="form-control" value="" />
+
+    <label asp-for="Manager" class="control-label">Manager</label>
+    <input type="text" step="0.01" name="Manager" class="form-control" />
+
+    <label asp-for="NumberOfEmployees" class="control-label">NumberOfEmployees</label>
+    <input type="text" step="0.01" name="NumberOfEmployees" class="form-control" />
+
+    <input type="submit" value="Create Store" class="btn btn-primary" />
+}
+
+

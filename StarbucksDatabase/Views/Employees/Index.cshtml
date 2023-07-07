@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Employees>
+
+<h2 class="colorChange">Employees</h2>
+<table class="tableColor">
+    <div style="display: block">
+        <a href="/Employees/InsertEmployees/">Create a New Employee</a>
+    </div>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Store</th>
+    </tr>
+
+    @foreach (var employees in @Model)
+    {
+        <tr>
+            <td><a href=/Employees/ViewEmployee/@employees.EmployeeID>@employees.EmployeeID</a></td>
+            <td>@employees.EmployeeName</td>
+            <td>@employees.EmployeePosition</td>
+            <td>@employees.EmployeeStore</td>
+        </tr>
+    }
+
+</table>
+<video id="video-bg" autoplay muted loop>
+    <source src="@Url.Content("~/Media/Employees.mp4")" type="video/mp4">
+    Your browser does not support the video tag.
+</video>

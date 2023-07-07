@@ -1,0 +1,19 @@
+﻿@model Stores
+
+<h2>Update @Model.Location</h2>
+
+@using (Html.BeginForm("UpdateStoresToDatabase", "Stores", "Post"))
+{
+    <input asp-for="StoreID" type="hidden" value="@Model.StoreID" />
+
+    <label asp-for="Location" class="control-label">Location</label>
+    <input type="text" name="StoreLocation" class="form-control" value="@Model.Location" />
+
+    <label asp-for="Manager" class="control-label">Manager</label>
+    <input type="text" name="StoreManager" class="form-control" value="@Model.Manager" />
+
+    <label asp-for="NumberOfEmployees" class="control-label">Employees</label>
+    <input type="text" name="NumberOfEmployees" class="form-control" value="@Model.NumberOfEmployees" />
+
+    <input type="submit" value="Update Employee" class="btn btn-primary" />
+}

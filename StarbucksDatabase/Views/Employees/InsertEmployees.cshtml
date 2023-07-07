@@ -1,0 +1,21 @@
+﻿@model Employees
+
+<h2>Create a New Employee</h2>
+
+@using (Html.BeginForm("InsertEmployeesToDatabase", "Employees", "Post"))
+{
+    <input asp-for="EmployeeID" type="hidden" value="" />
+
+    <label asp-for="EmployeeName" class="control-label">Name</label>
+    <input type="text" name="EmployeeName" class="form-control" value="" />
+
+    <label asp-for="EmployeePosition" class="control-label">Postion</label>
+    <input type="text" step="0.01" name="EmployeePosition" class="form-control" />
+
+    <label asp-for="EmployeeStore" class="control-label">Store</label>
+    <input type="text" step="0.01" name="EmployeeStore" class="form-control" />
+
+    <input type="submit" value="Create Employee" class="btn btn-primary" />
+}
+
+

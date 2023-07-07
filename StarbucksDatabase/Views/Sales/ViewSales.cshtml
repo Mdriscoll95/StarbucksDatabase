@@ -1,0 +1,31 @@
+﻿@model Sales
+
+<h3>@Model.StoreName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>EstimatedAnnualSales</th>
+        <th>SalesByMonth</th>
+        
+    </tr>
+    <tr>
+        <td>@Model.SalesID</td>
+        <td>@Model.StoreName</td>
+        <td>@Model.EstimatedAnnualSales</td>
+        <td>@Model.SalesByMonth</td>
+    </tr>
+</table>
+<div style="display: block">
+    <a href="/Sales/UpdateSales/@Model.SalesID">Update this Sales</a>
+</div>
+
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteSales", "Sales", "Post"))
+    {
+        <input type="hidden" asp-for="SalesID" value="@Model.SalesID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this value" />
+    }
+</div>

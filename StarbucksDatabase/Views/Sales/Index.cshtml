@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Sales>
+
+<h2 class="colorChange">Sales</h2>
+<table class="tableColor">
+    <div style="display: block">
+        <a href="/Sales/InsertSales/">Create a New Sale</a>
+    </div>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>AnnualSales</th>
+        <th>SaleByMonth</th>
+    </tr>
+
+    @foreach (var sales in @Model)
+    {
+        <tr>
+            <td><a href=/Sales/ViewSales/@sales.SalesID>@sales.SalesID</a></td>
+            <td>@sales.StoreName</td>
+            <td>@sales.EstimatedAnnualSales</td>
+            <td>@sales.SalesByMonth</td>
+
+        </tr>
+    }
+
+</table>
+<div style="display: block">
+    <a href="/Sales/InsertSales/">Create a New Sale</a>
+</div>
+<video id="video-bg" autoplay muted loop>
+    <source src="@Url.Content("~/Media/Sales.mp4")" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+

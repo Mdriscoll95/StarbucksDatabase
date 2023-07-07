@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Merchandise>
+
+<h2 class="colorChange">Products</h2>
+<table class="tableColor">
+    <div style="display: block">
+        <a href="/Beverages/InsertBeverages/">Create a New Merchandise</a>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Sold</th>
+    </tr>
+
+    @foreach (var merchandise in @Model)
+    {
+        <tr>
+
+            <td><a href=/Merchandise/ViewMerchandise/@merchandise.MerchandiseID>@merchandise.MerchandiseID</a></td>
+            <td>@merchandise.MerchandiseName</td>
+            <td>@merchandise.MerchandiseCategory</td>
+            <td>@merchandise.MerchandisePrice</td>
+            <td>@merchandise.MerchandiseSold</td>
+
+        </tr>
+    }
+
+</table>
+<div style="display: block">
+    <a href="/Merchandise/InsertMerchandise/">Create a New Merchandise</a>
+</div>
+<video id="video-bg" autoplay muted loop>
+    <source src="@Url.Content("~/Media/Merchandise.mp4")" type="video/mp4">
+    Your browser does not support the video tag.
+</video>

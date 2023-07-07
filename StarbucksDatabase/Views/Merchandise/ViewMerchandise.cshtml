@@ -1,0 +1,32 @@
+﻿@model Merchandise
+
+<h3>@Model.MerchandiseName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category ID</th>
+        <th>Price</th>
+        <th>Sold</th>
+    </tr>
+    <tr>
+        <td>@Model.MerchandiseID</td>
+        <td>@Model.MerchandiseName</td>
+        <td>@Model.MerchandiseCategory</td>
+        <td>@Model.MerchandisePrice</td>
+        <td>@Model.MerchandiseSold</td>
+    </tr>
+</table>
+<div style="display: block">
+    <a href="/Merchandise/UpdateMerchandise/@Model.MerchandiseID">Update this Merchandise</a>
+</div>
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteMerchandise", "Merchandise", "Post"))
+    {
+        <input type="hidden" asp-for="MerchandiseID" value="@Model.MerchandiseID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this merchandise" />
+    }
+</div>
+

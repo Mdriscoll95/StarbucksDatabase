@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.143" />
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Beverages\" />
+    <None Remove="Views\Employees\" />
+    <None Remove="Views\Merchandise\" />
+    <None Remove="Views\Sales\" />
+    <None Remove="Views\Stores\" />
+    <None Remove="wwwroot\Media\.Employees.mov.icloud" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Beverages\" />
+    <Folder Include="Views\Employees\" />
+    <Folder Include="Views\Merchandise\" />
+    <Folder Include="Views\Sales\" />
+    <Folder Include="Views\Stores\" />
+    <Folder Include="wwwroot\Media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Media\MainPage.mp4" />
+    <Content Remove="wwwroot\Media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\Media\MainPage.mp4" />
+  </ItemGroup>
+</Project>

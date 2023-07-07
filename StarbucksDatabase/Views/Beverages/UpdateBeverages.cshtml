@@ -1,0 +1,21 @@
+﻿@model Beverages
+
+<h2>Update @Model.BeverageName</h2>
+
+@using (Html.BeginForm("UpdateBeveragesToDatabase", "Beverages", "Post"))
+{
+    <input asp-for="idBeverages" type="hidden" value="@Model.idBeverages" />
+
+    <label asp-for="BeverageName" class="control-label">Name</label>
+    <input type="text" name="BeverageName" class="form-control" value="@Model.BeverageName" />
+
+    <label asp-for="BeveragesSold" class="control-label">BeveragesSold</label>
+    <input type="number" step="0.01" name="BeveragesSold" class="form-control" value="@Model.BeveragesSold" />
+
+
+    <label asp-for="BeveragePrice" class="control-label">BeveragePrice</label>
+    <input type="number" step="0.01" name="BeveragePrice" class="form-control" value="@Model.BeveragePrice" />
+
+    <input type="submit" value="Update Beverage" class="btn btn-primary" />
+}
+
